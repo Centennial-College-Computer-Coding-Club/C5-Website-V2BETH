@@ -1,13 +1,18 @@
 {
-  "name": "beth-stack",
-  "author": {
-    "name": "Filip Vučemilović-Grgić",
-    "email": "filip.vucemilovic.grgic@gmail.com",
-    "url": "https://github.com/fvucemilo"
+  "name": "c5-website-v2beth",
+  "authors": {
+    "name": [
+
+    ],
+    "email": [
+
+    ],
+    "url": "https://github.com/Centennial-College-Computer-Coding-Club/C5-Website-V2BETH",
+    "website": "https://www.c-5.club"
   },
   "description": "A opinionated hypermedia-driven architecture balancing developer experience and performance.",
   "homepage": "https://the-beth-stack.fly.dev",
-  "license": "MIT",
+  "license": "GNU GPL v3.0",
   "module": "src/index.tsx",
   "type": "module",
   "scripts": {
