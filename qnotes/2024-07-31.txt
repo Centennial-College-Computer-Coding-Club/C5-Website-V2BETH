@@ -5,6 +5,11 @@ Ideas
 - Blog?
     - Screening Credentials?
     - Content Analysis Automation (AI) (NLP)
+    - Manually
+        - Semi Manually (Python Scripts)
+        - Automation (https://docs.cron-job.org/index.html)
+            - Staged Automation
+            - Lazy Automaton
 - Hooks for Discord
     - Channels (#member)
     - New Member Notifications
@@ -20,3 +25,8 @@ MVP Requirements
 - Socials (Footer)
 - Events Page
 - Contact (Footer)
+- Projects Page
+    - Link Embedding for Youtube Videos
+- Documentation / Primer to Website
+    - Passing on the Legacy (Event)
+    - Forms for Applying
