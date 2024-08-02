@@ -7,6 +7,19 @@ export default tseslint.config(
     eslint.configs.recommended,
     ...tseslint.configs.recommended,
     ...tseslint.configs.strictTypeChecked,
-    ...tseslint.configs.recommendedTypeCheckedOnly,
-    /// NOTE: More Rules Can be Added Here.
+    ...tseslint.configs.recommendedTypeCheckedOnly, // NOTE: More Rules Can be Added Below Here.
+    {
+        languageOptions: {
+            parser: tseslint.parser,
+            parserOptions: {
+                project: './tsconfig.json',
+            },
+        },
+
+        ignores: [
+            // NOTE: Ignore Patterns Here (If Any).
+        ],
+    },
+    
+    // NOTE: More Rules Can be Added BelowHere.
 )
