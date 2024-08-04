@@ -19,6 +19,13 @@ export default tseslint.config(
         ignores: [
             // NOTE: Ignore Patterns Here (If Any).
         ],
+        files: [
+            // NOTE: Files to Lint Here (If Any).
+            "src/**/*.ts",
+            "src/**/*.tsx",
+            "src/**/*.js",
+            "src/**/*.jsx",
+        ]
     },
     
     // NOTE: More Rules Can be Added BelowHere.
