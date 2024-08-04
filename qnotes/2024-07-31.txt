@@ -1,0 +1,32 @@
+Ideas
+- Dashboard/ Backend for Site Analytics (Member Data)
+    - Pulse Checks, Discord Member Checks 
+        - Discord Integration? (Potentially) (Polling)
+- Blog?
+    - Screening Credentials?
+    - Content Analysis Automation (AI) (NLP)
+    - Manually
+        - Semi Manually (Python Scripts)
+        - Automation (https://docs.cron-job.org/index.html)
+            - Staged Automation
+            - Lazy Automaton
+- Hooks for Discord
+    - Channels (#member)
+    - New Member Notifications
+- SignUp
+- Grafana Configuration
+    - Stats
+    - Link through Grafana
+
+MVP Requirements
+- Landing Page
+- Membership SignUp / Hooks
+- About Section
+- Socials (Footer)
+- Events Page
+- Contact (Footer)
+- Projects Page
+    - Link Embedding for Youtube Videos
+- Documentation / Primer to Website
+    - Passing on the Legacy (Event)
+    - Forms for Applying

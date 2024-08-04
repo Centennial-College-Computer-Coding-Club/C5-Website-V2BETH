@@ -1,43 +1,46 @@
 {
   "name": "c5-website-v2beth",
   "authors": {
-    "name": [
-
-    ],
-    "email": [
-
-    ],
+    "name": [],
+    "email": [],
     "url": "https://github.com/Centennial-College-Computer-Coding-Club/C5-Website-V2BETH",
     "website": "https://www.c-5.club"
   },
   "description": "A opinionated hypermedia-driven architecture balancing developer experience and performance.",
   "homepage": "https://the-beth-stack.fly.dev",
   "license": "GNU GPL v3.0",
-  "module": "src/index.tsx",
+  "module": "src/index.ts",
   "type": "module",
   "scripts": {
     "db:push": "bunx drizzle-kit push:sqlite",
     "db:studio": "bunx drizzle-kit studio",
     "db:seed": "bun ./src/db/seed.ts",
     "dev": "concurrently \"bun run --watch src/index.tsx\" \"bun run tw:dev\"",
-    "tw": "bunx tailwindcss -i ./src/styles.css -o ./tailwind-gen/styles.css",
-    "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./tailwind-gen/styles.css --watch"
+    "tw": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css",
+    "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
+    "lint": "eslint --ext .ts,.tsx src",
+    "lint:fix": "eslint --ext .ts,.tsx src --fix"
   },
   "devDependencies": {
     "bun-types": "latest",
-    "concurrently": "^8.2.0",
+    "concurrently": "^8.2.2",
     "drizzle-kit": "^0.19.12",
-    "tailwindcss": "^3.3.3",
-    "typed-html": "^3.0.1"
+    "tailwindcss": "^3.4.7",
+    "eslint": "^9.8.0",
+    "typed-html": "^3.0.1",
+    "@types/eslint__js": "^8.42.3",
+    "typescript-eslint": "^8.0.0"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@elysiajs/html": "^0.5.2",
+    "@elysiajs/html": "1.0",
+    "@elysiajs/static": "1.0",
+    "@eslint/js": "^9.8.0",
     "@libsql/client": "^0.5.2",
     "@otherguy/elysia-logging": "^0.0.17",
     "drizzle-orm": "^0.29.4",
-    "elysia": "^0.5.25"
+    "elysia": "latest"
   }
 }

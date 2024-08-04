@@ -1,10 +1,12 @@
-import { InferModel } from "drizzle-orm";
+import { InferInsertModel } from "drizzle-orm";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-export const todos = sqliteTable("todos", {
-  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-  content: text("content").notNull(),
-  completed: integer("completed", { mode: "boolean" }).notNull().default(false),
+export const members = sqliteTable("members", {
+    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    email: text("email").notNull(),
+    first_name: text("first_name").notNull(),
+    last_name: text("last_name").notNull(),
+    created_at: text("created_at").notNull().default("CURRENT_TIMESTAMP")
 });
 
-export type Todo = InferModel<typeof todos>;
+export type Member = InferInsertModel<typeof members>;
