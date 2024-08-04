@@ -18,8 +18,8 @@
     "dev": "concurrently \"bun run --watch src/index.tsx\" \"bun run tw:dev\"",
     "tw": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css",
     "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
-    "lint": "eslint --ext .ts,.tsx src",
-    "lint:fix": "eslint --ext .ts,.tsx src --fix"
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "devDependencies": {
     "bun-types": "latest",
