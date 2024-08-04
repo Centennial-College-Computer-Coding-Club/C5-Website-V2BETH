@@ -5,23 +5,22 @@
       "@/*": ["./*"],
       "bun-types": ["./types/bun.d.ts"]
     },
-    "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "bundler",
+    "module": "ES2022",
+    "target": "ES2021",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
     "moduleDetection": "force",
     "allowImportingTsExtensions": true,
     "strict": true,
     "downlevelIteration": true,
     "skipLibCheck": true,
     "jsx": "react",
-    "jsxFactory": "elements.createElement",
+    "jsxFactory": "Html.createElement",
+    "jsxFragmentFactory": "Html.Fragment",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "noEmit": true,
-    "types": [
-      "bun-types" // add Bun global
-    ]
+    "types": ["bun-types"]
   }
 }
