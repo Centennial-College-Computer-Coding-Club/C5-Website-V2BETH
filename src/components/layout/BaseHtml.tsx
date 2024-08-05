@@ -9,7 +9,7 @@ export default function BaseHtml(props: { children?: JSX.Element | JSX.Element[]
             <script src="/public/scripts/htmx2.0.1.min.js"></script>
             <link rel="stylesheet" href="/public/styles.css"/>
         </head>
-        <body class="flex w-full h-screen justify-center items-center box-border">
+        <body class="flex flex-col w-full h-screen items-center box-border p-2">
             {props.children}
         </body>
         </html>

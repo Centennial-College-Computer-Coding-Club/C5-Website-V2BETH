@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Roboto-Regular";
+    font-display: swap;
+    src: url("../public/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    font-display: swap;
+    src: url("../public/fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
+}
+
+body {
+    background-color: #161616;
+    font-family: "Roboto-Regular", sans-serif;
+    color: #BBB;
+}
+
+.button {
+    font-family: "Roboto-Regular", sans-serif;
+    background-color: #161616;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #252525;
+}
+
+.button-secondary {
+    font-family: "Roboto-Regular", sans-serif;
+    background-color: #d9d9d9;
+    color: #161616;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-secondary:hover {
+    background-color: #f8f8f8;
+}
+
+.button-tertiary {
+    font-family: "Roboto-Regular", sans-serif;
+    background-color: #252525;
+    border: 1px solid #EEE;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-tertiary:hover {
+    background-color: #333;
+}
+
+.button-accent {
+    font-family: "Roboto-Regular", sans-serif;
+    background-color: #d4df38;
+    color: #161616;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-accent:hover {
+    background-color: #f0ff3b;
+}
