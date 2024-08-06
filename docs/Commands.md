@@ -6,8 +6,12 @@ turso db tokens create <db-name>
 ## Drizzle-Kit Commands
 
 **Drizzle-Kit Commands**
-npx drizzle-kit push
-npx drizzle-kit deploy
+bunx? | npx? drizzle-kit push
+bunx drizzle-kit generate
+bunx drizzle-kit up
+bunx drizzle-kit check
+bunx drizzle-kit drop
+bunx drizzle-kit --help
 
 **Drizzle-Kit Studio Commands**
 drizzle-kit studio

@@ -107,7 +107,7 @@ const apiRouter = new Elysia({ prefix: "/api" })
             }).returning().get();
 
             return (
-                // TODO: Link to discord server
+                // TODO: Link to Discord server
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                     <strong class="font-bold">Welcome aboard!</strong>
                     <span class="block sm:inline"> You've successfully joined C<sup>5</sup>. We'll be in touch soon!</span>
