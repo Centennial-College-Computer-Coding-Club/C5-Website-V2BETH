@@ -4,6 +4,7 @@ import Header from "@/src/components/Header.tsx";
 import Hero from "@/src/components/Hero.tsx";
 import Footer from "@/src/components/Footer.tsx";
 import About from "@/src/components/About.tsx";
+import Events from "@/src/components/Events.tsx";
 import Projects from "@/src/components/Projects.tsx";
 
 
@@ -25,7 +26,7 @@ const pageRouter = new Elysia()
 	.get("/events", () => (
 		<BaseHtml>
 			<Header />
-			<h1>Events</h1>
+			<Events />
 			<Footer />
 		</BaseHtml>
 	))
