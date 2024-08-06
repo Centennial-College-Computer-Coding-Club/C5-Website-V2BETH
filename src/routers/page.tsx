@@ -1,8 +1,10 @@
 import { Elysia } from "elysia";
-import BaseHtml from "../components/layout/BaseHtml";
+import BaseHtml from "@/src/components/layout/BaseHtml";
 import Header from "@/src/components/Header.tsx";
 import Hero from "@/src/components/Hero.tsx";
 import Footer from "@/src/components/Footer.tsx";
+import About from "@/src/components/About.tsx";
+
 
 const pageRouter = new Elysia()
 	.get("/", () => (
@@ -15,7 +17,7 @@ const pageRouter = new Elysia()
 	.get("/about", () => (
 		<BaseHtml>
 			<Header />
-			<h1>About</h1>
+			<About />
 			<Footer />
 		</BaseHtml>
 	))
