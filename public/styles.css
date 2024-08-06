@@ -607,6 +607,14 @@ video {
   margin-right: auto;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -667,6 +675,10 @@ video {
   height: 100vh;
 }
 
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -693,6 +705,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .border-collapse {
@@ -773,8 +789,16 @@ video {
   gap: 1.25rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .self-center {
   align-self: center;
+}
+
+.rounded-\[20px\] {
+  border-radius: 20px;
 }
 
 .border {
@@ -784,6 +808,11 @@ video {
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#161616\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 22 22 / var(--tw-bg-opacity));
 }
 
 .object-center {
@@ -799,9 +828,25 @@ video {
   padding: 1.25rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-\[\'Montserrat-Bold\'\] {
+  font-family: 'Montserrat-Bold';
+}
+
+.font-\[\'Roboto-Regular\'\] {
+  font-family: 'Roboto-Regular';
 }
 
 .text-2xl {
@@ -824,6 +869,16 @@ video {
   line-height: 1.75rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -832,6 +887,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#d9d9d9\] {
+  --tw-text-opacity: 1;
+  color: rgb(217 217 217 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -873,7 +933,7 @@ video {
 body {
   background-color: #161616;
   font-family: "Roboto-Regular", sans-serif;
-  color: #BBB;
+  color: #d9d9d9;
 }
 
 .button {
@@ -932,4 +992,16 @@ body {
 
 .button-accent:hover {
   background-color: #f0ff3b;
+}
+
+@media (min-width: 768px) {
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
 }
