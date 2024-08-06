@@ -12,9 +12,11 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "db:push": "bunx drizzle-kit push:sqlite",
-    "db:studio": "bunx drizzle-kit studio",
+    "db:push": "bun run --bun drizzle-kit push",
+    "db:studio": "bun run --bun drizzle-kit studio --port 8080 --verbose",
     "db:seed": "bun ./src/db/seed.ts",
+    "db:generate":  "bun run --bun drizzle-kit generate",
+    "db:migrate": "bun run --bun drizzle-kit migrate",
     "dev": "concurrently \"bun run --watch src/index.tsx\" \"bun run tw:dev\"",
     "tw": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css",
     "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
@@ -22,13 +24,13 @@
     "lint:fix": "eslint src --fix"
   },
   "devDependencies": {
+    "@types/eslint__js": "^8.42.3",
     "bun-types": "latest",
     "concurrently": "^8.2.2",
     "drizzle-kit": "^0.23.2",
-    "tailwindcss": "^3.4.7",
     "eslint": "^9.8.0",
+    "tailwindcss": "^3.4.7",
     "typed-html": "^3.0.1",
-    "@types/eslint__js": "^8.42.3",
     "typescript-eslint": "^8.0.0"
   },
   "peerDependencies": {

@@ -13,8 +13,8 @@ if (!Bun.env.DATABASE_AUTH_TOKEN) {
 
 /** @type { import("drizzle-kit").Config } */
 export default {
-  schema: "./src/database/schema/**/*.ts",
-  out: "./drizzle",
+  schema: "./src/db/schema",
+  out: "./.drizzle",
   dialect: "sqlite",
   driver: "turso",
   dbCredentials: {
