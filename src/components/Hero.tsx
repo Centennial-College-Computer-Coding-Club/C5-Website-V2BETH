@@ -9,7 +9,7 @@ export default function Hero() {
                 Centennial College's Computer and Coding Club: Where Innovation Meets Community
             </p>
             <div class="flex gap-4">
-                <a href="/signup" class="button-accent text-lg">Join Us</a>
+                <a href="/join" class="button-accent text-lg">Join Us</a>
                 <a href="/events" class="button-tertiary text-lg">Upcoming Events</a>
             </div>
         </section>

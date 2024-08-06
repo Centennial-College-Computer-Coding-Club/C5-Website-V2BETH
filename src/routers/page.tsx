@@ -39,6 +39,13 @@ const pageRouter = new Elysia()
             <h1>Contact</h1>
             <Footer />
         </BaseHtml>
-    ));
+    ))
+	.get("/join", () => (
+		<BaseHtml>
+			<Header />
+			<h1>Join Us</h1>
+			<Footer />
+		</BaseHtml>
+	));
 
 export default pageRouter;

@@ -16,7 +16,7 @@ export default function Footer() {
                         </div>
                         <div class="flex flex-col items-center space-y-2">
                             <a href="/contact" class="hover:text-[#d4df38] transition-colors">Contact</a>
-                            <a href="/signup" class="hover:text-[#d4df38] transition-colors">Join Us</a>
+                            <a href="/join" class="hover:text-[#d4df38] transition-colors">Join Us</a>
                         </div>
                     </nav>
                 </div>

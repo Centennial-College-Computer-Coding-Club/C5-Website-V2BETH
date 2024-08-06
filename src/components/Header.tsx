@@ -9,7 +9,7 @@ export default function Header() {
                 <a class="button" href="/projects">Projects</a>
                 <a class="button" href="/contact">Contact</a>
             </nav>
-            <a class="button-accent" href="/signup">Sign Up</a>
+            <a class="button-accent" href="/join">Join Us</a>
         </header>
     )
 }
