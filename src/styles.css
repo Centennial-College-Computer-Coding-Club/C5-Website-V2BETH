@@ -14,66 +14,21 @@
     src: url("../public/fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
 }
 
-body {
-    background-color: #161616;
-    font-family: "Roboto-Regular", sans-serif;
-    color: #d9d9d9;
-}
-
 .button {
-    font-family: "Roboto-Regular", sans-serif;
-    background-color: #161616;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #252525;
+    @apply px-5 py-2 bg-[#252525] text-[#d9d9d9] rounded-[10px] border border-[#d9d9d9] cursor-pointer transition-colors duration-300 hover:bg-[#333];
 }
 
 .button-secondary {
-    font-family: "Roboto-Regular", sans-serif;
-    background-color: #d9d9d9;
-    color: #161616;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-secondary:hover {
-    background-color: #f8f8f8;
+    @apply button;
+    @apply bg-[#d9d9d9] text-[#161616] hover:bg-[#f8f8f8];
 }
 
 .button-tertiary {
-    font-family: "Roboto-Regular", sans-serif;
-    background-color: #252525;
-    border: 1px solid #EEE;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-tertiary:hover {
-    background-color: #333;
+    @apply button;
+    @apply bg-[#161616] hover:bg-[#252525] border-none;
 }
 
 .button-accent {
-    font-family: "Roboto-Regular", sans-serif;
-    background-color: #d4df38;
-    color: #161616;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-accent:hover {
-    background-color: #f0ff3b;
+    @apply button;
+    @apply bg-[#d4df38] text-[#161616] hover:bg-[#f0ff3b]
 }
