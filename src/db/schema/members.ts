@@ -5,6 +5,7 @@ export const members = sqliteTable("members", {
     id: integer("id", { mode: "number" }).primaryKey({
         autoIncrement: true
     }),
+    role: text("role").$type<"staff" | "member" | "process">().default("member"),
     email: text("email").notNull(),
     first_name: text("first_name").notNull(),
     last_name: text("last_name").notNull(),
