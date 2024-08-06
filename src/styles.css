@@ -15,7 +15,7 @@
 }
 
 .button {
-    @apply px-5 py-2 bg-[#252525] text-[#d9d9d9] rounded-[10px] border border-[#d9d9d9] cursor-pointer transition-colors duration-300 hover:bg-[#333];
+    @apply px-3 py-1 bg-[#252525] text-[#d9d9d9] rounded-[10px] border border-[#d9d9d9] cursor-pointer transition-colors duration-300 hover:bg-[#333];
 }
 
 .button-secondary {
