@@ -2,7 +2,9 @@ import { InferInsertModel } from "drizzle-orm";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const members = sqliteTable("members", {
-    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    id: integer("id", { mode: "number" }).primaryKey({
+        autoIncrement: true
+    }),
     email: text("email").notNull(),
     first_name: text("first_name").notNull(),
     last_name: text("last_name").notNull(),
@@ -10,5 +12,3 @@ export const members = sqliteTable("members", {
 });
 
 export type Member = InferInsertModel<typeof members>;
-
-// TODO: Kept Here but Should be Removed (Organized in a Better Way)
