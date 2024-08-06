@@ -7,6 +7,7 @@ import About from "@/src/components/About.tsx";
 import Events from "@/src/components/Events.tsx";
 import Projects from "@/src/components/Projects.tsx";
 import Contact from "@/src/Contact.tsx";
+import Join from "@/src/components/Join.tsx";
 
 
 const pageRouter = new Elysia()
@@ -48,7 +49,7 @@ const pageRouter = new Elysia()
 	.get("/join", () => (
 		<BaseHtml>
 			<Header currentPath="join" />
-			<h1>Join Us</h1>
+			<Join />
 			<Footer />
 		</BaseHtml>
 	));

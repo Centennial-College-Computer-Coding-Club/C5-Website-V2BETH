@@ -2,6 +2,7 @@ import { Elysia } from "elysia";
 import { db } from "@/src/db";
 import { projects } from "@/src/db/schema/projects";
 import { events } from "@/src/db/schema/events";
+import { members } from "@/src/db/schema/members";
 import { and, gte, lt } from "drizzle-orm";
 
 
@@ -96,6 +97,31 @@ const apiRouter = new Elysia({ prefix: "/api" })
                 <span class="block sm:inline"> Your message has been sent successfully.</span>
             </div>
         );
+    })
+    .post("/join", async ({ body }: { body: { first_name: string; last_name: string; email: string } }) => {
+        try {
+            const newMember = await db.insert(members).values({
+                first_name: body.first_name,
+                last_name: body.last_name,
+                email: body.email,
+            }).returning().get();
+
+            return (
+                // TODO: Link to discord server
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Welcome aboard!</strong>
+                    <span class="block sm:inline"> You've successfully joined C<sup>5</sup>. We'll be in touch soon!</span>
+                </div>
+            );
+        } catch (error) {
+            console.error("Error adding new member:", error);
+            return (
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Oops!</strong>
+                    <span class="block sm:inline"> There was an error processing your request. Please try again later.</span>
+                </div>
+            );
+        }
     });
 
 export default apiRouter;
