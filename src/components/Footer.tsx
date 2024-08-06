@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer class="w-full bg-[#252525] text-[#d9d9d9] rounded-t-[20px] mt-16 px-4 group">
+        <footer class="w-full bg-[#252525] text-[#d9d9d9] rounded-t-[20px] mt-auto px-4 group">
             <div class="handle w-4 h-4 bg-[#d4df38] rounded-full mx-auto my-2 group-hover:bg-[#d9d9d9] transition-all duration-500 ease-in-out"></div>
             <div id="extendedFooter" class="flex justify-between max-w-xl mx-auto overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0px; opacity: 0;">
                 <div class="flex flex-col pt-2 pb-8">
