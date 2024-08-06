@@ -12,42 +12,42 @@ import Contact from "@/src/Contact.tsx";
 const pageRouter = new Elysia()
 	.get("/", () => (
 		<BaseHtml>
-			<Header />
+			<Header currentPath="home" />
 			<Hero />
 			<Footer />
 		</BaseHtml>
 	))
 	.get("/about", () => (
 		<BaseHtml>
-			<Header />
+			<Header currentPath="about" />
 			<About />
 			<Footer />
 		</BaseHtml>
 	))
 	.get("/events", () => (
 		<BaseHtml>
-			<Header />
+			<Header currentPath="events" />
 			<Events />
 			<Footer />
 		</BaseHtml>
 	))
     .get("/projects", () => (
         <BaseHtml>
-			<Header />
+			<Header currentPath="projects" />
 			<Projects />
 			<Footer />
 		</BaseHtml>
     ))
     .get("/contact", () => (
         <BaseHtml>
-            <Header />
+            <Header currentPath="contact" />
             <Contact />
             <Footer />
         </BaseHtml>
     ))
 	.get("/join", () => (
 		<BaseHtml>
-			<Header />
+			<Header currentPath="join" />
 			<h1>Join Us</h1>
 			<Footer />
 		</BaseHtml>
