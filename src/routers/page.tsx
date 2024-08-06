@@ -6,6 +6,7 @@ import Footer from "@/src/components/Footer.tsx";
 import About from "@/src/components/About.tsx";
 import Events from "@/src/components/Events.tsx";
 import Projects from "@/src/components/Projects.tsx";
+import Contact from "@/src/Contact.tsx";
 
 
 const pageRouter = new Elysia()
@@ -40,7 +41,7 @@ const pageRouter = new Elysia()
     .get("/contact", () => (
         <BaseHtml>
             <Header />
-            <h1>Contact</h1>
+            <Contact />
             <Footer />
         </BaseHtml>
     ))

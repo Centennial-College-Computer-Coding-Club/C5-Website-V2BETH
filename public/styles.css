@@ -688,6 +688,10 @@ video {
   display: block;
 }
 
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -831,6 +835,10 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
 }
 
 .flex-grow {
@@ -1019,6 +1027,10 @@ video {
   border-radius: 0.5rem;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-t-\[20px\] {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -1041,6 +1053,11 @@ video {
   border-color: rgb(22 22 22 / var(--tw-border-opacity));
 }
 
+.border-green-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(74 222 128 / var(--tw-border-opacity));
+}
+
 .bg-\[\#161616\] {
   --tw-bg-opacity: 1;
   background-color: rgb(22 22 22 / var(--tw-bg-opacity));
@@ -1059,6 +1076,11 @@ video {
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 
 .object-center {
@@ -1114,6 +1136,16 @@ video {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .pb-8 {
@@ -1204,6 +1236,10 @@ video {
   line-height: 1rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .text-\[\#d9d9d9\] {
   --tw-text-opacity: 1;
   color: rgb(217 217 217 / var(--tw-text-opacity));
@@ -1217,6 +1253,16 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1435,9 +1481,20 @@ video {
   color: rgb(212 223 56 / var(--tw-text-opacity));
 }
 
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .group:hover .group-hover\:bg-\[\#d9d9d9\] {
   --tw-bg-opacity: 1;
   background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 640px) {
+  .sm\:inline {
+    display: inline;
+  }
 }
 
 @media (min-width: 768px) {

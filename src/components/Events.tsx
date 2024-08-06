@@ -4,7 +4,7 @@ export default function Events() {
     const currentYear = currentDate.getFullYear();
 
     return (
-        <section class="flex flex-col items-center justify-center w-full max-w-6xl mx-auto py-16">
+        <section class="flex flex-col items-center justify-center w-full max-w-6xl mx-auto my-auto pb-5">
             <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-8">
                 C<sup>5</sup> Events
             </h1>

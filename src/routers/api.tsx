@@ -85,6 +85,17 @@ const apiRouter = new Elysia({ prefix: "/api" })
         }
 
         return <>{calendarDays}</>;
+    })
+    .post("/contact", async ({ body }) => {
+        // TODO: Send email to club email address
+        console.log("Received contact form submission:", body);
+
+        return (
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Thank you!</strong>
+                <span class="block sm:inline"> Your message has been sent successfully.</span>
+            </div>
+        );
     });
 
 export default apiRouter;
