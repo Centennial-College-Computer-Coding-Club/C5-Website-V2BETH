@@ -1,9 +1,9 @@
 import { Elysia } from "elysia";
 import { db } from "@/src/db";
-import { projects } from "@/src/db/schema.ts";
-import { events } from "@/src/db/schema.ts";
-import { members } from "@/src/db/schema.ts";
-import { and, gte, lt } from "drizzle-orm";
+import { projects, events, members, blogPosts } from "@/src/db/schema.ts";
+import {and, gte, lt, eq, desc} from "drizzle-orm";
+import { sanitizeHtml } from "@/src/utils/sanitizer";
+import { sendDiscordWebhook } from "@/src/utils/discord";
 
 
 const apiRouter = new Elysia({ prefix: "/api" })
@@ -122,6 +122,53 @@ const apiRouter = new Elysia({ prefix: "/api" })
                 </div>
             );
         }
+    })
+    .get("/blog/posts", async () => {
+        const posts = await db.select().from(blogPosts).where(eq(blogPosts.status, "approved")).orderBy(desc(blogPosts.created_at)).all();
+
+        return (
+            <div class="grid grid-cols-1 gap-8 w-full">
+                {posts.map(post => (
+                    <div class="bg-[#252525] p-6 rounded-lg shadow-lg">
+                        <h3 class="font-['Montserrat-Bold'] text-xl mb-2">{post.title}</h3>
+                        <p class="text-sm mb-4">{post.content}</p>
+                        <p class="text-xs text-gray-500">
+                            Author: {post.author}<br />
+                            Posted: {new Date(post.created_at).toLocaleDateString()}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        )
+    })
+    .post("/blog/submit", async ({ body }: { body: { title: string; author: string; content: string } }) => {
+        const sanitizedContent = sanitizeHtml(body.content);
+        const newPost = await db.insert(blogPosts).values({
+            title: body.title,
+            author: body.author,
+            content: sanitizedContent,
+        }).returning().get();
+
+        await sendDiscordWebhook({
+            content: `New blog post submitted!`,
+            embeds: [{
+                title: newPost.title,
+                description: newPost.content.substring(0, 100) + "...",
+                author: {
+                    name: newPost.author
+                },
+                footer: {
+                    text: `Post ID: ${newPost.id}`
+                }
+            }]
+        });
+
+        return (
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Thank you!</strong>
+                <span class="block sm:inline"> Your blog post has been submitted for review.</span>
+            </div>
+        );
     });
 
 export default apiRouter;

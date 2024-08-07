@@ -9,13 +9,14 @@ export default function Footer() {
                         <div class="flex flex-col items-center space-y-2">
                             <a href="/" class="hover:text-[#d4df38] transition-colors">Home</a>
                             <a href="/about" class="hover:text-[#d4df38] transition-colors">About</a>
-                        </div>
-                        <div class="flex flex-col items-center space-y-2">
                             <a href="/events" class="hover:text-[#d4df38] transition-colors">Events</a>
-                            <a href="/projects" class="hover:text-[#d4df38] transition-colors">Projects</a>
                         </div>
                         <div class="flex flex-col items-center space-y-2">
+                            <a href="/projects" class="hover:text-[#d4df38] transition-colors">Projects</a>
                             <a href="/contact" class="hover:text-[#d4df38] transition-colors">Contact</a>
+                        </div>
+                        <div class="flex flex-col items-center space-y-2">
+                            <a href="/blog" class="hover:text-[#d4df38] transition-colors">Blog</a>
                             <a href="/join" class="hover:text-[#d4df38] transition-colors">Join Us</a>
                         </div>
                     </nav>

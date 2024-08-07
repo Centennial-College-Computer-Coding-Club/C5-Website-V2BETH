@@ -11,6 +11,7 @@ export default function Header({ currentPath }: { currentPath: string }) {
                 <a href="/about" class={currentPath === "about" ? "button-secondary" : "button-tertiary"}>About</a>
                 <a href="/events" class={currentPath === "events" ? "button-secondary" : "button-tertiary"}>Events</a>
                 <a href="/projects" class={currentPath === "projects" ? "button-secondary" : "button-tertiary"}>Projects</a>
+                <a href="/blog" class={currentPath === "blog" ? "button-secondary" : "button-tertiary"}>Blog</a>
                 <a href="/contact" class={currentPath === "contact" ? "button-secondary" : "button-tertiary"}>Contact</a>
             </nav>
 
@@ -26,6 +27,7 @@ export default function Header({ currentPath }: { currentPath: string }) {
                     <a href="/about" class={`block py-2 ${currentPath === "about" ? "text-[#d4df38]" : ""}`}>About</a>
                     <a href="/events" class={`block py-2 ${currentPath === "events" ? "text-[#d4df38]" : ""}`}>Events</a>
                     <a href="/projects" class={`block py-2 ${currentPath === "projects" ? "text-[#d4df38]" : ""}`}>Projects</a>
+                    <a href="/blog" class={`block py-2 ${currentPath === "blog" ? "text-[#d4df38]" : ""}`}>Blog</a>
                     <a href="/contact" class={`block py-2 ${currentPath === "contact" ? "text-[#d4df38]" : ""}`}>Contact</a>
                 </div>
             </div>

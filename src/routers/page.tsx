@@ -8,6 +8,7 @@ import Events from "@/src/components/Events.tsx";
 import Projects from "@/src/components/Projects.tsx";
 import Contact from "@/src/Contact.tsx";
 import Join from "@/src/components/Join.tsx";
+import Blog from "@/src/components/Blog.tsx";
 
 
 const pageRouter = new Elysia()
@@ -50,6 +51,13 @@ const pageRouter = new Elysia()
 		<BaseHtml>
 			<Header currentPath="join" />
 			<Join />
+			<Footer />
+		</BaseHtml>
+	))
+	.get("/blog", () => (
+		<BaseHtml>
+			<Header currentPath="blog" />
+			<Blog />
 			<Footer />
 		</BaseHtml>
 	));
