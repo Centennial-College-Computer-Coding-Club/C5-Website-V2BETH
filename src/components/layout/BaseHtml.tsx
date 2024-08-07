@@ -2,7 +2,7 @@ export default function BaseHtml(props: {
 	children?: JSX.Element | JSX.Element[];
 }) {
 	return (
-		<html lang="en" class="bg-gray-900 text-white">
+		<html lang="en" class="bg-[#161616] text-white">
 		<head>
 			<meta charset="UTF-8"/>
 			<meta
@@ -20,7 +20,7 @@ export default function BaseHtml(props: {
 			<link rel="apple-touch-icon" sizes="180x180" href="/public/imgs/apple-touch-icon.png"/>
 		</head>
 		<body
-			class="flex flex-col w-full h-screen items-center box-border p-2 bg-[#161616] font-['Roboto-Regular'] text-[#d9d9d9]">
+			class="flex flex-col w-full h-screen items-center box-border p-2 font-['Roboto-Regular'] text-[#d9d9d9]">
 				{props.children}
 			</body>
 		</html>
