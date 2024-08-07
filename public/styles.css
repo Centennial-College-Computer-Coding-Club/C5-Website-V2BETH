@@ -1034,10 +1034,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.rounded-\[10px\] {
-  border-radius: 10px;
-}
-
 .rounded-t-\[20px\] {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -1109,6 +1105,10 @@ video {
   padding: 0.5rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -1123,10 +1123,6 @@ video {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .px-3 {
@@ -1193,16 +1189,16 @@ video {
   padding-top: 1rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-5 {
-  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -1511,6 +1507,32 @@ video {
   background-color: rgb(240 255 59 / var(--tw-bg-opacity));
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #252525;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #252525;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #252525;
+}
+
+::-webkit-resizer {
+  background-color: #252525;
+}
+
 .hover\:text-\[\#d4df38\]:hover {
   --tw-text-opacity: 1;
   color: rgb(212 223 56 / var(--tw-text-opacity));
@@ -1529,10 +1551,6 @@ video {
 @media (min-width: 640px) {
   .sm\:inline {
     display: inline;
-  }
-
-  .sm\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
