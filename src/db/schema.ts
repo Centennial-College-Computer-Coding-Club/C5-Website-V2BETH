@@ -45,3 +45,14 @@ export const projects = sqliteTable("projects", {
 });
 
 export type Project = InferInsertModel<typeof projects>;
+
+export const blogPosts = sqliteTable("blog_posts", {
+    id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    title: text("title").notNull(),
+    content: text("content").notNull(),
+    author: text("author").notNull(),
+    status: text("status").$type<"pending" | "approved" | "rejected">().default("pending"),
+    created_at: text("created_at").notNull().default("CURRENT_TIMESTAMP")
+});
+
+export type BlogPost = InferInsertModel<typeof blogPosts>;
