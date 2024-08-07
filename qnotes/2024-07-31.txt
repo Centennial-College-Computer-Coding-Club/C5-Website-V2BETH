@@ -1,5 +1,5 @@
 Ideas
-- Dashboard/ Backend for Site Analytics (Member Data)  (IN PROGRESS)
+- Dashboard/ Backend for Site Analytics (Member Data)
     - Pulse Checks, Discord Member Checks 
         - Discord Integration? (Potentially) (Polling)
 - Blog?
@@ -19,14 +19,14 @@ Ideas
     - Link through Grafana
 
 MVP Requirements
-- Landing Page                           (FINISHED)
-- Membership SignUp / Hooks              (FINISHED)
-- About Section                          (FINISHED)
-- Socials (Footer)                       (FINISHED)
-- Events Page                            (FINISHED)
-- Contact (Footer)                       (FINISHED)
-- Projects Page                          (FINISHED)
-    - Link Embedding for Youtube Videos  (FINISHED)
-- Documentation / Primer to Website
+- Landing Page ✅
+- Membership SignUp ✅ / Hook [TODO]
+- About Section ✅
+- Socials (Footer) ✅
+- Events Page ✅
+- Contact (Footer) ✅
+- Projects Page ✅
+    - Link Embedding for Youtube Videos [TODO]
+- Documentation / Primer to Website [TODO]
     - Passing on the Legacy (Event)
     - Forms for Applying

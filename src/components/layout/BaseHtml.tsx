@@ -14,6 +14,10 @@ export default function BaseHtml(props: {
 			<script src="/public/scripts/footer-animation.js"></script>
 			<script src="/public/scripts/mobile-menu.js"></script>
 			<link rel="stylesheet" href="/public/styles.css"/>
+			<link rel="icon" type="image/x-icon" href="/public/imgs/favicon.ico"/>
+			<link rel="icon" type="image/png" sizes="32x32" href="/public/imgs/favicon-32x32.png"/>
+			<link rel="icon" type="image/png" sizes="16x16" href="/public/imgs/favicon-16x16.png"/>
+			<link rel="apple-touch-icon" sizes="180x180" href="/public/imgs/apple-touch-icon.png"/>
 		</head>
 		<body
 			class="flex flex-col w-full h-screen items-center box-border p-2 font-['Roboto-Regular'] text-[#d9d9d9]">
