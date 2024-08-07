@@ -1,8 +1,8 @@
 import { Elysia } from "elysia";
 import { db } from "@/src/db";
-import { projects } from "@/src/db/schema/projects";
-import { events } from "@/src/db/schema/events";
-import { members } from "@/src/db/schema/members";
+import { projects } from "@/src/db/schema.ts";
+import { events } from "@/src/db/schema.ts";
+import { members } from "@/src/db/schema.ts";
 import { and, gte, lt } from "drizzle-orm";
 
 
