@@ -174,3 +174,7 @@ dist
 # Drizzle 
 
 .drizzle/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

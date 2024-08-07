@@ -1,7 +1,8 @@
 import { InferInsertModel } from "drizzle-orm";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-export const members = sqliteTable("members", {
+// Mock Members Schema for Testing Turso Database
+export const mockMembers = sqliteTable("mock_members", {
     id: integer("id", { mode: "number" }).primaryKey({
         autoIncrement: true
     }),
@@ -12,4 +13,4 @@ export const members = sqliteTable("members", {
     created_at: text("created_at").notNull().default("CURRENT_TIMESTAMP")
 });
 
-export type Member = InferInsertModel<typeof members>;
+export type MockMember = InferInsertModel<typeof mockMembers>;

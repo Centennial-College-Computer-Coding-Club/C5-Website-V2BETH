@@ -15,16 +15,20 @@
     "db:push": "bun run --bun drizzle-kit push",
     "db:studio": "bun run --bun drizzle-kit studio --port 8080 --verbose",
     "db:seed": "bun ./src/db/seed.ts",
-    "db:generate":  "bun run --bun drizzle-kit generate",
+    "db:generate": "bun run --bun drizzle-kit generate",
     "db:migrate": "bun run --bun drizzle-kit migrate",
     "dev": "concurrently \"bun run --watch src/index.tsx\" \"bun run tw:dev\"",
     "tw": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css",
     "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "test": "bun --bun playwright test",
+    "test:report": "bun --bun playwright show-report"
   },
   "devDependencies": {
+    "@playwright/test": "^1.46.0",
     "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.1.0",
     "bun-types": "latest",
     "concurrently": "^8.2.2",
     "drizzle-kit": "^0.23.2",
