@@ -20,7 +20,7 @@ export default function BaseHtml(props: {
 			<link rel="apple-touch-icon" sizes="180x180" href="/public/imgs/apple-touch-icon.png"/>
 		</head>
 		<body
-			class="flex flex-col w-full h-screen items-center box-border p-2 font-['Roboto-Regular'] text-[#d9d9d9] mt-20">
+			class="flex flex-col w-full h-screen items-center box-border p-2 font-['Roboto-Regular'] text-[#d9d9d9] pt-28">
 				{props.children}
 			</body>
 		</html>

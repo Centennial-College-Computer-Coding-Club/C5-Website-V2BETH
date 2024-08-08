@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <section class="flex flex-col items-center justify-center w-full max-w-4xl mx-auto my-auto pb-5">
+        <section class="flex flex-col items-center justify-center w-full max-w-4xl my-auto pb-5">
             <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-8">
                 Contact Us
             </h1>

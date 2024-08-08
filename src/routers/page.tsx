@@ -6,7 +6,7 @@ import Footer from "@/src/components/Footer.tsx";
 import About from "@/src/components/About.tsx";
 import Events from "@/src/components/Events.tsx";
 import Projects from "@/src/components/Projects.tsx";
-import Contact from "@/src/Contact.tsx";
+import Contact from "@/src/components/Contact.tsx";
 import Join from "@/src/components/Join.tsx";
 import Blog from "@/src/components/Blog.tsx";
 
