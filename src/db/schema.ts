@@ -1,5 +1,5 @@
 import { InferInsertModel } from "drizzle-orm";
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text, blob } from "drizzle-orm/sqlite-core";
 
 
 export const members = sqliteTable("members", {
@@ -48,6 +48,7 @@ export type Project = InferInsertModel<typeof projects>;
 
 export const blogPosts = sqliteTable("blog_posts", {
     id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+    img: blob("img").$type<Buffer>(),
     title: text("title").notNull(),
     content: text("content").notNull(),
     author: text("author").notNull(),
