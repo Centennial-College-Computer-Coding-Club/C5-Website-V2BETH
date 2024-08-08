@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('extendedFooter');
 
     footer.onmouseenter = () => {
-        content.style.maxHeight = `${content.scrollHeight + 30}px`;
+        content.style.maxHeight = `${content.scrollHeight}px`;
         content.style.opacity = '1';
     };
 

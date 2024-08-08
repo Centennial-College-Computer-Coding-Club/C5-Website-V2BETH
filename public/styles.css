@@ -598,6 +598,30 @@ video {
   top: 1rem;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.top-auto {
+  top: auto;
+}
+
+.top-full {
+  top: 100%;
+}
+
+.-top-full {
+  top: -100%;
+}
+
+.bottom-full {
+  bottom: 100%;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -867,6 +891,11 @@ video {
 
 .-translate-x-1 {
   --tw-translate-x: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1523,14 +1552,6 @@ video {
 ::-webkit-scrollbar-thumb {
   background-color: #d9d9d9;
   border-radius: 3px;
-}
-
-::-webkit-scrollbar-corner {
-  background-color: #252525;
-}
-
-::-webkit-resizer {
-  background-color: #252525;
 }
 
 .hover\:text-\[\#d4df38\]:hover {
