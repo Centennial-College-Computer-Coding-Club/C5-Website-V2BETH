@@ -13,49 +13,49 @@ import Blog from "@/src/components/Blog.tsx";
 
 const pageRouter = new Elysia()
 	.get("/", () => (
-		<BaseHtml>
+		<BaseHtml path="Home">
 			<Header currentPath="home" />
 			<Hero />
 			<Footer />
 		</BaseHtml>
 	))
 	.get("/about", () => (
-		<BaseHtml>
+		<BaseHtml path="About">
 			<Header currentPath="about" />
 			<About />
 			<Footer />
 		</BaseHtml>
 	))
 	.get("/events", () => (
-		<BaseHtml>
+		<BaseHtml path="Events">
 			<Header currentPath="events" />
 			<Events />
 			<Footer />
 		</BaseHtml>
 	))
     .get("/projects", () => (
-        <BaseHtml>
+        <BaseHtml path="Projects">
 			<Header currentPath="projects" />
 			<Projects />
 			<Footer />
 		</BaseHtml>
     ))
     .get("/contact", () => (
-        <BaseHtml>
+        <BaseHtml path="Contact">
             <Header currentPath="contact" />
             <Contact />
             <Footer />
         </BaseHtml>
     ))
 	.get("/join", () => (
-		<BaseHtml>
+		<BaseHtml path="Join">
 			<Header currentPath="join" />
 			<Join />
 			<Footer />
 		</BaseHtml>
 	))
 	.get("/blog", () => (
-		<BaseHtml>
+		<BaseHtml path="Blog">
 			<Header currentPath="blog" />
 			<Blog />
 			<Footer />

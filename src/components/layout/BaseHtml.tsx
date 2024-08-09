@@ -1,6 +1,4 @@
-export default function BaseHtml(props: {
-	children?: JSX.Element | JSX.Element[];
-}) {
+export default function BaseHtml(props: {children?: JSX.Element | JSX.Element[]; path: string;}) {
 	return (
 		<html lang="en" class="bg-[#161616] text-white">
 		<head>
@@ -9,7 +7,7 @@ export default function BaseHtml(props: {
 				name="viewport"
 				content="width=device-width, user-sc00alable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
 			/>
-			<title> Document </title>
+			<title>{props.path}</title>
 			<script src="/public/scripts/htmx2.0.1.min.js"></script>
 			<script src="/public/scripts/footer-animation.js"></script>
 			<script src="/public/scripts/mobile-menu.js"></script>
