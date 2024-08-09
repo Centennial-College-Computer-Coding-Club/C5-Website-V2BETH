@@ -34,53 +34,57 @@ const apiRouter = new Elysia({ prefix: "/api" })
         )
     })
     .get("/events", async () => {
-        const currentDate = new Date().toISOString();
+        const currentDate = new Date();
+        currentDate.setUTCHours(0, 0, 0, 0);
         const upcomingEvents = await db.select()
             .from(events)
-            .where(gte(events.eventStart, currentDate))
+            .where(gte(events.eventStart, currentDate.toISOString().split('T')[0]))
             .orderBy(events.eventStart)
             .limit(10)
             .all();
 
         return (
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-                {upcomingEvents.map(event => (
-                    <div class="flex flex-col bg-gradient-to-br from-[#212121] to-[#282828] rounded-xl shadow-lg p-6 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl">
-                        <h3 class="font-['Montserrat-Bold'] text-xl mb-2 text-[#d4df38]">{event.title}</h3>
-                        <p class="text-sm mb-4 text-gray-300 line-clamp-3">{event.description}</p>
-                        <p class="text-xs text-gray-400">
-                            <span class="block">Date: {new Date(event.eventStart).toLocaleDateString()}</span>
-                            <span class="block">Time: {new Date(event.eventStart).toLocaleTimeString()} - {new Date(event.eventEnd).toLocaleTimeString()}</span>
-                            <span class="block">Location: {event.location}</span>
-                        </p>
-                        <button class="mt-4 button-accent text-sm self-end" onclick={`showEventModal(${JSON.stringify(event)})`}>
-                            View Details
-                        </button>
-                    </div>
-                ))}
+                {upcomingEvents.map(event => {
+                    const startDate = new Date(event.eventStart);
+                    const endDate = new Date(event.eventEnd);
+                    return (
+                        <div class="flex flex-col bg-gradient-to-br from-[#212121] to-[#282828] rounded-xl shadow-lg p-6 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl">
+                            <h3 class="font-['Montserrat-Bold'] text-xl mb-2 text-[#d4df38]">{event.title}</h3>
+                            <p class="text-sm mb-4 text-gray-300 line-clamp-3">{event.description}</p>
+                            <p class="text-xs text-gray-400">
+                                <span class="block">Date: {startDate.toLocaleDateString()}</span>
+                                <span class="block">Time: {startDate.toLocaleTimeString()} - {endDate.toLocaleTimeString()}</span>
+                                <span class="block">Location: {event.location}</span>
+                            </p>
+                            <button class="mt-4 button-accent text-sm self-end" onclick={`showEventModal(${JSON.stringify({...event, eventStart: event.eventStart, eventEnd: event.eventEnd})})`}>
+                                View Details
+                            </button>
+                        </div>
+                    );
+                })}
             </div>
         )
     })
-
     .get("/events/calendar", async ({ query }) => {
         const year = parseInt(query.year as string);
         const month = parseInt(query.month as string);
 
-        const startDate = new Date(year, month - 1, 1);
-        const endDate = new Date(year, month, 0);
+        const startDate = new Date(Date.UTC(year, month - 1, 1, 12, 0, 0, 0));
+        const endDate = new Date(Date.UTC(year, month, 0, 12, 0, 0, 0));
 
         const monthEvents = await db.select()
             .from(events)
             .where(
                 and(
-                    gte(events.eventStart, startDate.toISOString()),
-                    lt(events.eventStart, endDate.toISOString())
+                    gte(events.eventStart, startDate.toISOString().split('T')[0]),
+                    lt(events.eventStart, endDate.toISOString().split('T')[0])
                 )
             )
             .all();
 
-        const daysInMonth = endDate.getDate();
-        const firstDayOfWeek = startDate.getDay();
+        const daysInMonth = endDate.getUTCDate();
+        const firstDayOfWeek = startDate.getUTCDay();
 
         const calendarDays = [];
         for (let i = 0; i < firstDayOfWeek; i++) {
@@ -88,21 +92,22 @@ const apiRouter = new Elysia({ prefix: "/api" })
         }
 
         for (let day = 1; day <= daysInMonth; day++) {
-            const date = new Date(year, month - 1, day);
-            const dayEvents = monthEvents.filter(event => new Date(event.eventStart).getDate() === day);
+            const dayEvents = monthEvents.filter(event => new Date(event.eventStart).getUTCDate() === day);
 
             calendarDays.push(
                 <div class="h-24 bg-gradient-to-br from-[#212121] to-[#282828] rounded-lg p-2 overflow-hidden relative group">
                     <div class="font-['Montserrat-Bold'] text-sm mb-1">{day}</div>
-                    {dayEvents.map(event => (
-                        <div
-                            class="text-xs truncate cursor-pointer text-[#d4df38] hover:underline"
-                            title={event.title}
-                            onclick={`showEventModal(${JSON.stringify(event)})`}
-                        >
-                            {event.title}
-                        </div>
-                    ))}
+                    {dayEvents.map(event => {
+                        return (
+                            <div
+                                class="text-xs truncate cursor-pointer text-[#d4df38] hover:underline"
+                                title={event.title}
+                                onclick={`showEventModal(${JSON.stringify({...event, eventStart: event.eventStart, eventEnd: event.eventEnd})})`}
+                            >
+                                {event.title}
+                            </div>
+                        )
+                    })}
                 </div>
             );
         }

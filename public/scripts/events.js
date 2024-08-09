@@ -6,9 +6,13 @@ function showEventModal(event) {
 
     title.textContent = event.title;
     description.textContent = event.description;
+
+    const startDate = new Date(event.eventStart);
+    const endDate = new Date(event.eventEnd);
+
     details.innerHTML = `
-        <p>Date: ${new Date(event.eventStart).toLocaleDateString()}</p>
-        <p>Time: ${new Date(event.eventStart).toLocaleTimeString()} - ${new Date(event.eventEnd).toLocaleTimeString()}</p>
+        <p>Date: ${startDate.toLocaleDateString()}</p>
+        <p>Time: ${startDate.toLocaleTimeString()} - ${endDate.toLocaleTimeString()}</p>
         <p>Location: ${event.location}</p>
         <p>Organizer: ${event.organizer}</p>
     `;
