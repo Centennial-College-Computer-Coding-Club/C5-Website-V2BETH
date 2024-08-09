@@ -33,6 +33,13 @@
     @apply bg-[#d4df38] text-[#161616] hover:bg-[#f0ff3b] border-none;
 }
 
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(45deg, #3b82f6, #8b5cf6);
+}
+
 ::-webkit-scrollbar { width: 15px; height: 3px;}
 ::-webkit-scrollbar-track {  background-color: #252525;}
 ::-webkit-scrollbar-track-piece { background-color: #252525;}
