@@ -37,26 +37,31 @@ const apiRouter = new Elysia({ prefix: "/api" })
         const currentDate = new Date().toISOString();
         const upcomingEvents = await db.select()
             .from(events)
-            .where(gte(events.event_start, currentDate))
-            .orderBy(events.event_start)
+            .where(gte(events.eventStart, currentDate))
+            .orderBy(events.eventStart)
             .limit(10)
             .all();
 
         return (
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                 {upcomingEvents.map(event => (
-                    <div class="bg-[#252525] p-6 rounded-lg shadow-lg">
-                        <h3 class="font-['Montserrat-Bold'] text-xl mb-2">{event.title}</h3>
-                        <p class="text-sm mb-4">{event.description}</p>
-                        <p class="text-xs text-gray-500">
-                            Date: {new Date(event.event_start).toLocaleDateString()}<br />
-                            Time: {new Date(event.event_start).toLocaleTimeString()} - {new Date(event.event_end).toLocaleTimeString()}
+                    <div class="flex flex-col bg-gradient-to-br from-[#212121] to-[#282828] rounded-xl shadow-lg p-6 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl">
+                        <h3 class="font-['Montserrat-Bold'] text-xl mb-2 text-[#d4df38]">{event.title}</h3>
+                        <p class="text-sm mb-4 text-gray-300 line-clamp-3">{event.description}</p>
+                        <p class="text-xs text-gray-400">
+                            <span class="block">Date: {new Date(event.eventStart).toLocaleDateString()}</span>
+                            <span class="block">Time: {new Date(event.eventStart).toLocaleTimeString()} - {new Date(event.eventEnd).toLocaleTimeString()}</span>
+                            <span class="block">Location: {event.location}</span>
                         </p>
+                        <button class="mt-4 button-accent text-sm self-end" onclick={`showEventModal(${JSON.stringify(event)})`}>
+                            View Details
+                        </button>
                     </div>
                 ))}
             </div>
         )
     })
+
     .get("/events/calendar", async ({ query }) => {
         const year = parseInt(query.year as string);
         const month = parseInt(query.month as string);
@@ -68,8 +73,8 @@ const apiRouter = new Elysia({ prefix: "/api" })
             .from(events)
             .where(
                 and(
-                    gte(events.event_start, startDate.toISOString()),
-                    lt(events.event_start, endDate.toISOString())
+                    gte(events.eventStart, startDate.toISOString()),
+                    lt(events.eventStart, endDate.toISOString())
                 )
             )
             .all();
@@ -84,13 +89,19 @@ const apiRouter = new Elysia({ prefix: "/api" })
 
         for (let day = 1; day <= daysInMonth; day++) {
             const date = new Date(year, month - 1, day);
-            const dayEvents = monthEvents.filter(event => new Date(event.event_start).getDate() === day);
+            const dayEvents = monthEvents.filter(event => new Date(event.eventStart).getDate() === day);
 
             calendarDays.push(
-                <div class="h-24 bg-[#252525] rounded-lg p-2 overflow-hidden">
+                <div class="h-24 bg-gradient-to-br from-[#212121] to-[#282828] rounded-lg p-2 overflow-hidden relative group">
                     <div class="font-['Montserrat-Bold'] text-sm mb-1">{day}</div>
                     {dayEvents.map(event => (
-                        <div class="text-xs truncate" title={event.title}>{event.title}</div>
+                        <div
+                            class="text-xs truncate cursor-pointer text-[#d4df38] hover:underline"
+                            title={event.title}
+                            onclick={`showEventModal(${JSON.stringify(event)})`}
+                        >
+                            {event.title}
+                        </div>
                     ))}
                 </div>
             );
