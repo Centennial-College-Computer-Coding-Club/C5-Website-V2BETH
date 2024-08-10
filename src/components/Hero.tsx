@@ -2,8 +2,8 @@ export default function Hero() {
     return (
         <section
             class="flex flex-col items-center justify-center my-auto w-full bg-[#161616] text-[#d9d9d9] rounded-[20px]">
-            <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-6">
-                Welcome to C<sup>5</sup>
+            <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-6 text-gradient">
+                Welcome to C<sup class="text-gradient">5</sup>
             </h1>
             <p class="font-['Roboto-Regular'] text-xl md:text-2xl text-center mb-8 max-w-2xl">
                 Centennial College's Computer and Coding Club: Where Innovation Meets Community

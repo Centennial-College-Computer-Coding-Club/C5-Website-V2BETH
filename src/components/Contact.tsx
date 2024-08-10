@@ -1,7 +1,7 @@
 export default function Contact() {
     return (
         <section class="flex flex-col items-center justify-center w-full max-w-4xl my-auto pb-5">
-            <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-8">
+            <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-8 text-gradient">
                 Contact Us
             </h1>
             <p class="text-xl mb-8 text-center">
@@ -46,7 +46,7 @@ export default function Contact() {
                         type="submit"
                         class="button-accent text-lg"
                     >
-                        Send Message
+                        Send to dev/null
                     </button>
                 </div>
             </form>
