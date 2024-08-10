@@ -17,12 +17,12 @@ function showEventModal(event) {
         <p>Organizer: ${event.organizer}</p>
     `;
 
-    modal.classList.remove('hidden');
+    modal.showModal();
 }
 
 function closeEventModal() {
     const modal = document.getElementById('event-modal');
-    modal.classList.add('hidden');
+    modal.close();
 }
 
 document.addEventListener('DOMContentLoaded', function() {

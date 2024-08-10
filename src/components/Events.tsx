@@ -46,14 +46,14 @@ export default function Events() {
                 <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#d4df38]"></div>
             </div>
 
-            <div id="event-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-                <div class="bg-[#252525] rounded-xl p-8 max-w-2xl w-full mx-4 flex flex-col">
+            <dialog id="event-modal" class="bg-[#252525] text-[#d9d9d9] rounded-lg p-0 w-full max-w-2xl">
+                <div id="modal-content" class="p-8">
                     <h2 id="modal-title" class="font-['Montserrat-Bold'] text-2xl mb-4 text-[#d4df38]"></h2>
                     <p id="modal-description" class="text-gray-300 mb-4"></p>
                     <div id="modal-details" class="text-sm text-gray-400 mb-4"></div>
                     <button onclick="closeEventModal()" class="button-accent self-end">Close</button>
                 </div>
-            </div>
+            </dialog>
             <script src="/public/scripts/events.js" defer></script>
         </section>
     )
