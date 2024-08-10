@@ -178,3 +178,4 @@ dist
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/codebase.md

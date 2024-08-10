@@ -154,12 +154,15 @@ const apiRouter = new Elysia({ prefix: "/api" })
         const posts = await db.select().from(blogPosts).where(eq(blogPosts.status, "approved")).orderBy(desc(blogPosts.created_at)).all();
 
         return (
-            <div class="grid grid-cols-1 gap-8 w-full">
-                {posts.map(post => (
-                    <div class="bg-[#252525] p-6 rounded-lg shadow-lg">
-                        <h3 class="font-['Montserrat-Bold'] text-xl mb-2">{post.title}</h3>
-                        <p class="text-sm mb-4">{post.content}</p>
-                        <p class="text-xs text-gray-500">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                {posts.map((post, index) => (
+                    <div
+                        class="bg-gradient-to-br from-[#212121] to-[#282828] rounded-xl shadow-lg p-6 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl cursor-pointer"
+                        onclick={`openBlogModal(${index})`}
+                    >
+                        <h3 class="font-['Montserrat-Bold'] text-xl mb-2 text-[#d4df38]">{post.title}</h3>
+                        <p class="text-sm mb-4 text-gray-300 line-clamp-3">{post.content}</p>
+                        <p class="text-xs text-gray-400">
                             Author: {post.author}<br />
                             Posted: {new Date(post.created_at).toLocaleDateString()}
                         </p>
@@ -168,7 +171,8 @@ const apiRouter = new Elysia({ prefix: "/api" })
             </div>
         )
     })
-    .post("/blog/submit", async ({ body }: { body: { title: string; author: string; content: string } }) => {
+
+    .post("/blog/submit", async ({ body } : { body : { title : string, author : string, content : string } }) => {
         const sanitizedContent = sanitizeHtml(body.content);
         const newPost = await db.insert(blogPosts).values({
             title: body.title,
@@ -196,6 +200,6 @@ const apiRouter = new Elysia({ prefix: "/api" })
                 <span class="block sm:inline"> Your blog post has been submitted for review.</span>
             </div>
         );
-    });
+    })
 
 export default apiRouter;

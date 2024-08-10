@@ -54,6 +54,7 @@ export default function Events() {
                     <button onclick="closeEventModal()" class="button-accent self-end">Close</button>
                 </div>
             </div>
+            <script src="/public/scripts/events.js" defer></script>
         </section>
     )
 }

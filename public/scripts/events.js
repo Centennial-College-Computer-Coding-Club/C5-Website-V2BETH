@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     prevButton.addEventListener('click', showPrevEvent);
 
     const buttonDiv = document.createElement('div');
-    buttonDiv.classList.add('button mb-4 flex items-center justify-center');
+    buttonDiv.classList.add('flex', 'items-center', 'justify-center', 'gap-8', 'mb-4');
     buttonDiv.appendChild(prevButton);
     buttonDiv.appendChild(nextButton);
 

@@ -11,7 +11,6 @@ export default function BaseHtml(props: {children?: JSX.Element | JSX.Element[];
 			<script src="/public/scripts/htmx2.0.1.min.js"></script>
 			<script src="/public/scripts/footer-animation.js" defer></script>
 			<script src="/public/scripts/mobile-menu.js" defer></script>
-			<script src="/public/scripts/events.js" defer></script>
 			<link rel="stylesheet" href="/public/styles.css"/>
 			<link rel="icon" type="image/x-icon" href="/public/imgs/favicon.ico"/>
 			<link rel="icon" type="image/png" sizes="32x32" href="/public/imgs/favicon-32x32.png"/>
