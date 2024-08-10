@@ -1,8 +1,8 @@
 export default function Join() {
     return (
         <section class="flex flex-col items-center justify-center w-full max-w-4xl my-auto pb-5">
-            <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-8">
-                Join C<sup>5</sup>
+            <h1 class="font-['Montserrat-Bold'] text-4xl md:text-6xl text-center mb-8 text-gradient">
+                Join C<sup class="text-gradient">5</sup>
             </h1>
             <p class="text-xl mb-8 text-center">
                 Become a part of our vibrant community of tech enthusiasts and innovators!
