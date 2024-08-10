@@ -19,7 +19,7 @@ const apiRouter = new Elysia({ prefix: "/api" })
                             <p class="text-gray-300 overflow-hidden">{project.description}</p>
                         </div>
                         <div class="flex justify-between items-center w-full mt-auto">
-                            <p class="text-sm text-gray-400 mt-auto">Created: {new Date(project.created_at).toLocaleDateString()}</p>
+                            <p class="project-description text-sm text-gray-400 mt-auto">Created: {new Date(project.created_at).toLocaleDateString()}</p>
                             <a href={project.link} target="_blank" class="hover:text-[#d4df38] transition-colors">
                                 <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"
                                      xmlns="http://www.w3.org/2000/svg">

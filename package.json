@@ -22,8 +22,8 @@
     "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "test": "bun --bun playwright test",
-    "test:report": "bun --bun playwright show-report"
+    "test": "bun playwright test",
+    "test:report": "bun playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.46.0",

@@ -49,7 +49,7 @@ export default function About() {
                         { name: "Fawzia", role: "Vice President", image: "/public/imgs/default-user.png" },
                         { name: "Vacant", role: "Admin Officer", image: "/public/imgs/default-user.png" },
                     ].map(member => (
-                        <div class="bg-gradient-to-br from-[#212121] to-[#282828] p-4 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 text-center transform transition-all duration-300 hover:scale-105">
+                        <div class="team-card bg-gradient-to-br from-[#212121] to-[#282828] p-4 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 text-center transform transition-all duration-300 hover:scale-105">
                             <img src={member.image} alt={member.name} class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
                             <h3 class="font-['Montserrat-Bold'] text-lg mb-1 text-[#d4df38]">{member.name}</h3>
                             <p class="text-sm text-gray-300">{member.role}</p>
