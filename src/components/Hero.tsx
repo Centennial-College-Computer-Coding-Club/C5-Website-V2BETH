@@ -22,7 +22,7 @@ export default function Hero() {
                         { icon: "🤝", title: "Connect", description: "Network with like-minded peers and industry professionals" },
                         { icon: "🚀", title: "Innovate", description: "Turn your ideas into reality with our supportive community" }
                     ].map(item => (
-                        <div class="bg-[#1e1e1e] p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                        <div class="bg-[#1e1e1e] p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
                             <div class="text-4xl mb-4">{item.icon}</div>
                             <h3 class="font-['Montserrat-Bold'] text-xl mb-2 text-[#d4df38]">{item.title}</h3>
                             <p class="text-gray-300">{item.description}</p>
