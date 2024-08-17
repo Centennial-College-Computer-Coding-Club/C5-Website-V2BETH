@@ -5,8 +5,8 @@ export default function Events() {
 
     return (
         <section class="flex flex-col items-center justify-center w-full max-w-6xl my-auto pb-5">
-            <h1 class="font-['Montserrat-Bold'] text-5xl md:text-7xl text-center mb-8 text-gradient">
-                C<sup class="text-gradient">5</sup> Events
+            <h1 class="font-['Montserrat-Bold'] text-5xl md:text-7xl text-center mb-8 flex justify-center">
+                C<sup class="text-[#d4df38] text-3xl">5</sup>&nbsp;Events
             </h1>
             <p class="text-xl mb-12 text-center text-gray-300 max-w-2xl">
                 Discover exciting events and activities happening in our C<sup>5</sup> community.

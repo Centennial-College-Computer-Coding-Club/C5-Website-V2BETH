@@ -1,8 +1,8 @@
 export default function Projects() {
     return (
         <section class="flex flex-col items-center justify-center w-full max-w-6xl mx-auto my-auto px-4">
-            <h1 class="font-['Montserrat-Bold'] text-5xl md:text-7xl text-center text-gradient">
-                C<sup class="text-gradient">5</sup> Projects<br/>&nbsp;
+            <h1 class="font-['Montserrat-Bold'] text-5xl md:text-7xl flex justify-center mb-12">
+                C<sup class="text-[#d4df38] text-3xl">5</sup>&nbsp;Projects
             </h1>
             <p class="text-xl mb-12 text-center text-gray-300 max-w-2xl">
                 Explore the innovative projects created by our C<sup>5</sup> community, showcasing our passion for technology and collaboration.

@@ -1,8 +1,8 @@
 export default function About() {
     return (
         <section class="flex flex-col items-center justify-center w-full max-w-6xl my-auto px-4">
-            <h1 class="font-['Montserrat-Bold'] text-5xl md:text-7xl text-center mb-12 text-gradient">
-                About C<sup class="text-gradient">5</sup>
+            <h1 class="font-['Montserrat-Bold'] text-5xl md:text-7xl text-center mb-12 flex justify-center">
+                About C<sup class="text-[#d4df38] text-3xl">5</sup>
             </h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 w-full">
