@@ -9,7 +9,7 @@ test.describe('Contact Page', () => {
     test('should have correct heading', async ({ page }) => {
         await page.goto('/contact');
         const heading = page.locator('h1');
-        await expect(heading).toContainText('Contact Us');
+        await expect(heading).toContainText('Contact C5');
     });
 
     test('should have contact form', async ({ page }) => {

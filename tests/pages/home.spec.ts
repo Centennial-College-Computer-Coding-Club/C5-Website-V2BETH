@@ -26,6 +26,30 @@ test.describe('Home Page', () => {
         await expect(eventsButton).toHaveAttribute('href', '/events');
     });
 
+    test('should have three feature sections', async ({ page }) => {
+        await page.goto('/');
+        const featureSections = page.locator('.grid > div');
+        await expect(featureSections).toHaveCount(3);
+    });
+
+    test('should have correct feature titles', async ({ page }) => {
+        await page.goto('/');
+        const featureTitles = page.locator('.grid h3');
+        await expect(featureTitles).toHaveCount(3);
+        await expect(featureTitles.nth(0)).toHaveText('Learn');
+        await expect(featureTitles.nth(1)).toHaveText('Connect');
+        await expect(featureTitles.nth(2)).toHaveText('Innovate');
+    });
+
+    test('should have elements with animation classes', async ({ page }) => {
+        await page.goto('/');
+        const fadeInDownElements = page.locator('.animate-fade-in-down');
+        const fadeInUpElements = page.locator('.animate-fade-in-up');
+
+        await expect(fadeInDownElements).toHaveCount(1);
+        await expect(fadeInUpElements).toHaveCount(3);
+    });
+
     test('should have footer', async ({ page }) => {
         await page.goto('/');
         const footer = page.locator('footer');
