@@ -5,6 +5,7 @@ import {and, gte, lt, eq, desc} from "drizzle-orm";
 import { sendEmail } from "@/src/utils/mailer";
 import { sanitizeHtml } from "@/src/utils/sanitizer";
 import { sendDiscordWebhook } from "@/src/utils/discord";
+import { blogPostLimiter, contactFormLimiter, joinLimiter, getClientIP } from "@/src/utils/rateLimiter";
 
 
 const apiRouter = new Elysia({ prefix: "/api" })
@@ -115,7 +116,17 @@ const apiRouter = new Elysia({ prefix: "/api" })
 
         return <>{calendarDays}</>;
     })
-    .post("/contact", async ({ body } : { body : {name: string, email: string, message : string } }) => {
+    .post("/contact", async ({ body, request } : { body : {name: string, email: string, message : string }, request: Request }) => {
+        const ip = getClientIP(request);
+        if (!contactFormLimiter.check(ip)) {
+            return (
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Rate limit exceeded!</strong>
+                    <span class="block sm:inline"> Please try again later.</span>
+                </div>
+            );
+        }
+
         const res = await sendEmail(process.env.CONTACT_EMAIL || "", "C5 Contact Form Submission", `Name: ${body.name}\nEmail: ${body.email}\nMessage: ${body.message}`);
         console.log("Received contact form submission:", res);
 
@@ -126,7 +137,17 @@ const apiRouter = new Elysia({ prefix: "/api" })
             </div>
         );
     })
-    .post("/join", async ({ body }: { body: { first_name: string; last_name: string; email: string } }) => {
+    .post("/join", async ({ body, request }: { body: { first_name: string; last_name: string; email: string }, request: Request }) => {
+        const ip = getClientIP(request);
+        if (!joinLimiter.check(ip)) {
+            return (
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Rate limit exceeded!</strong>
+                    <span class="block sm:inline"> Please try again later.</span>
+                </div>
+            );
+        }
+
         try {
             const newMember = await db.insert(members).values({
                 first_name: body.first_name,
@@ -173,7 +194,17 @@ const apiRouter = new Elysia({ prefix: "/api" })
         )
     })
 
-    .post("/blog/submit", async ({ body } : { body : { title : string, author : string, content : string } }) => {
+    .post("/blog/submit", async ({ body, request } : { body : { title : string, author : string, content : string }, request: Request }) => {
+        const ip = getClientIP(request);
+        if (!blogPostLimiter.check(ip)) {
+            return (
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Rate limit exceeded!</strong>
+                    <span class="block sm:inline"> Please try again later.</span>
+                </div>
+            );
+        }
+
         const sanitizedContent = sanitizeHtml(body.content);
         const newPost = await db.insert(blogPosts).values({
             title: body.title,
