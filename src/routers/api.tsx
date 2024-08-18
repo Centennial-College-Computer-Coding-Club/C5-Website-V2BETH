@@ -2,6 +2,7 @@ import { Elysia } from "elysia";
 import { db } from "@/src/db";
 import { projects, events, members, blogPosts } from "@/src/db/schema.ts";
 import {and, gte, lt, eq, desc} from "drizzle-orm";
+import { sendEmail } from "@/src/utils/mailer";
 import { sanitizeHtml } from "@/src/utils/sanitizer";
 import { sendDiscordWebhook } from "@/src/utils/discord";
 
@@ -114,9 +115,9 @@ const apiRouter = new Elysia({ prefix: "/api" })
 
         return <>{calendarDays}</>;
     })
-    .post("/contact", async ({ body }) => {
-        // TODO: Send email to club email address
-        console.log("Received contact form submission:", body);
+    .post("/contact", async ({ body } : { body : {name: string, email: string, message : string } }) => {
+        const res = await sendEmail(process.env.CONTACT_EMAIL || "", "C5 Contact Form Submission", `Name: ${body.name}\nEmail: ${body.email}\nMessage: ${body.message}`);
+        console.log("Received contact form submission:", res);
 
         return (
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">

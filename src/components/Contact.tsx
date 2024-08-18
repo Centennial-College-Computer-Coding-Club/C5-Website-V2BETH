@@ -7,7 +7,7 @@ export default function Contact() {
             <p class="text-xl mb-8 text-center">
                 Have questions or want to get involved? Reach out to us!
             </p>
-            <form class="w-full max-w-lg" hx-post="/api/contact" hx-swap="outerHTML">
+            <form class="w-full max-w-lg flex flex-col gap-4" hx-post="/api/contact" hx-swap="outerHTML">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-bold mb-2">Name</label>
                     <input
@@ -41,12 +41,12 @@ export default function Contact() {
                         placeholder="Your message here..."
                     ></textarea>
                 </div>
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between self-end">
                     <button
                         type="submit"
                         class="button-accent text-lg"
                     >
-                        Send to dev/null
+                        Send
                     </button>
                 </div>
             </form>
