@@ -7,7 +7,7 @@ export default function Join() {
             <p class="text-xl mb-8 text-center">
                 Become a part of our vibrant community of tech enthusiasts and innovators!
             </p>
-            <form class="w-full max-w-lg" hx-post="/api/join" hx-swap="outerHTML">
+            <form class="w-full max-w-lg flex flex-col gap-4" hx-post="/api/join" hx-swap="outerHTML">
                 <div class="mb-4">
                     <label for="first_name" class="block text-sm font-bold mb-2">First Name</label>
                     <input
@@ -41,7 +41,7 @@ export default function Join() {
                         placeholder="your@email.com"
                     />
                 </div>
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between self-end">
                     <button
                         type="submit"
                         class="button-accent text-lg"

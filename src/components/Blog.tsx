@@ -72,17 +72,17 @@ export default function Blog() {
                     </div>
                     <div class="flex items-center justify-between">
                         <button
-                            type="submit"
-                            class="button-accent text-lg"
-                        >
-                            Submit Post
-                        </button>
-                        <button
                             type="button"
                             class="button-secondary text-lg"
                             onclick="closeNewPostModal()"
                         >
                             Cancel
+                        </button>
+                        <button
+                            type="submit"
+                            class="button-accent text-lg"
+                        >
+                            Submit Post
                         </button>
                     </div>
                 </form>
