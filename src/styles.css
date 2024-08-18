@@ -1,3 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Roboto-Regular";
+    font-display: swap;
+    src: url("../public/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    font-display: swap;
+    src: url("../public/fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+.button {
+    @apply px-3 py-1 bg-[#252525] text-[#d9d9d9] rounded-[10px] border border-[#d9d9d9] cursor-pointer transition-colors duration-300 hover:bg-[#333];
+}
+
+.button-secondary {
+    @apply button;
+    @apply bg-[#d9d9d9] text-[#161616] hover:bg-[#f8f8f8] border-none;
+}
+
+.button-tertiary {
+    @apply button;
+    @apply bg-[#161616] hover:bg-[#252525] border-none;
+}
+
+.button-accent {
+    @apply button;
+    @apply bg-[#d4df38] text-[#161616] hover:bg-[#f0ff3b] border-none;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+dialog {
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#modal-content {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+#modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#modal-content::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+#modal-content::-webkit-scrollbar-thumb {
+    background: #d4df38;
+    border-radius: 4px;
+}
+
+#new-post-modal form {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#new-post-modal form::-webkit-scrollbar {
+    width: 8px;
+}
+
+#new-post-modal form::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+#new-post-modal form::-webkit-scrollbar-thumb {
+    background: #d4df38;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar { width: 15px; height: 3px;}
+::-webkit-scrollbar-track {  background-color: #252525;}
+::-webkit-scrollbar-track-piece { background-color: #252525;}
+::-webkit-scrollbar-thumb { background-color: #d9d9d9; border-radius: 3px;}

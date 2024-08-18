@@ -19,14 +19,14 @@ Ideas
     - Link through Grafana
 
 MVP Requirements
-- Landing Page
-- Membership SignUp / Hooks
-- About Section
-- Socials (Footer)
-- Events Page
-- Contact (Footer)
-- Projects Page
-    - Link Embedding for Youtube Videos
-- Documentation / Primer to Website
+- Landing Page ✅
+- Membership SignUp ✅ / Hook [TODO]
+- About Section ✅
+- Socials (Footer) ✅
+- Events Page ✅
+- Contact (Footer) ✅
+- Projects Page ✅
+    - Link Embedding for Youtube Videos [TODO]
+- Documentation / Primer to Website [TODO]
     - Passing on the Legacy (Event)
     - Forms for Applying

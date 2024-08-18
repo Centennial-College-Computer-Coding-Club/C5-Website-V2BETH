@@ -1,0 +1,1 @@
+bun run dev && bun run lint:fix

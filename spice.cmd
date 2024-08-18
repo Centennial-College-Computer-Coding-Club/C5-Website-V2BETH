@@ -1,0 +1,1 @@
+bun run db:migrate && bun run db:studio

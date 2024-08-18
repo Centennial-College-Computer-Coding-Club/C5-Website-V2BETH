@@ -12,23 +12,30 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "db:push": "bunx drizzle-kit push:sqlite",
-    "db:studio": "bunx drizzle-kit studio",
+    "db:push": "bun run drizzle-kit push",
+    "db:studio": "bun run drizzle-kit studio",
     "db:seed": "bun ./src/db/seed.ts",
+    "db:generate": "bun run drizzle-kit generate",
+    "db:migrate": "bun run drizzle-kit migrate",
     "dev": "concurrently \"bun run --watch src/index.tsx\" \"bun run tw:dev\"",
     "tw": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css",
     "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "test": "bun playwright test",
+    "test:report": "bun playwright show-report"
   },
   "devDependencies": {
+    "@playwright/test": "^1.46.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.1.0",
+    "@types/nodemailer": "^6.4.15",
     "bun-types": "latest",
     "concurrently": "^8.2.2",
-    "drizzle-kit": "^0.19.12",
-    "tailwindcss": "^3.4.7",
+    "drizzle-kit": "^0.23.2",
     "eslint": "^9.8.0",
+    "tailwindcss": "^3.4.7",
     "typed-html": "^3.0.1",
-    "@types/eslint__js": "^8.42.3",
     "typescript-eslint": "^8.0.0"
   },
   "peerDependencies": {
@@ -40,7 +47,12 @@
     "@eslint/js": "^9.8.0",
     "@libsql/client": "^0.5.2",
     "@otherguy/elysia-logging": "^0.0.17",
-    "drizzle-orm": "^0.29.4",
-    "elysia": "latest"
+    "chalk": "^5.3.0",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.32.2",
+    "elysia": "latest",
+    "isomorphic-dompurify": "^2.14.0",
+    "nodemailer": "^6.9.14",
+    "update-browserslist-db": "^1.1.0"
   }
 }

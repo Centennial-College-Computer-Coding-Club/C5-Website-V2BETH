@@ -1,39 +1,49 @@
-# THE BETH STACK
+<br />
+<div align="center">
+  <a href="/url">
+    <img src="./public/imgs/c5-logo.png" alt="C5 Website Logo" height="150">
+  </a>
 
-_It may not be the BEST stack, but it is the BETH stack._
+<h3 align="center">
+    C5 Official Website
+</h3>
+  <p align="left">
+    Source code for the official website of C5, a community-driven club at Centennial College, Toronto. This website
+    is dedicated as a hub for new and existing members to learn more about the club, its events, and more.
+    <br />
+    <div align="center">
+        <a href="/url">Report Bug</a>
+        ✱
+        <a href="/url">Request Feature</a>
+        ✱
+        <a href="/url">Documentation</a>
+    </div>
+  </p>
+</div>
 
-## [Bun](https://bun.sh/)
+<div align="center">
+    <!-- TODO: Add a Subsection for Badges Here -->
+</div>
 
-## [Elysia](https://elysiajs.com/)
+> [!WARNING] 
+> This website is still currently under development, and is not yet ready for production use. If there are any notable bugs or issues,
+> please report them ASAP to the development team or any staff at C5 to have it resolved for a better user experience. Your feedback 
+> and community support is greatly appreciated.
 
-## [Turso](https://turso.tech/)
+## Table of Contents
 
-## [HTMX](https://htmx.org/)
+## Features
 
-Also: [typed-html](https://github.com/nicojs/typed-html), [tailwind-css](https://tailwindcss.com/), [drizzle](https://orm.drizzle.team/), [hyperscript](https://hyperscript.org/) and [fly.io](https://fly.io/)
+## Getting Started
 
-# TO RUN LOCALLY
+### Prerequisites
 
-1. Clone this repo
+### Installation
 
-2. Install [Bun](https://bun.sh)
+### Usage
 
-3. Run `bun install` to install dependencies
+# License
 
-4. Create a database with [Turso](https://turso.tech) and add the connection url and token to a `.env` file in the root of this project
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
-5. Run `bun run db:push` to push the database schema to your database
-
-6. Run `bun run dev` to start the dev server
-
-# TO DEPLOY TO FLY
-
-1. Install the [Fly CLI](https://fly.io/docs/hands-on/install-flyctl/)
-
-2. Run `fly launch`
-
-3. Run `fly secrets set DATABASE_URL=<your url>` & `fly secrets set DATABASE_AUTH_TOKEN=<your token>`
-
-4. Generate the tailwind css file with `bun run tw`
-
-5. Run `fly deploy`
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
