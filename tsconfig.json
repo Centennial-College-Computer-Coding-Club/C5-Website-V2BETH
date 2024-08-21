@@ -22,5 +22,6 @@
     "allowJs": true,
     "noEmit": true,
     "types": ["bun-types"]
-  }
+  }, 
+  "include": ["src/**/*"],
 }
